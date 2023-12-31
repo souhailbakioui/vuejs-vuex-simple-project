@@ -10,5 +10,10 @@ export default createStore({
     nameWithTitle(state){
       return `${state.name} is ${state.title}`;
     }
+  },
+  mutations:{
+    changeTitle(state){
+      state.title="Web developer";
+    }
   }
 })
