@@ -1,33 +1,13 @@
 import { createStore } from "vuex";
-
+import ProductModule from "@/store/Products/products";
+import UserModule from "@/store/User/user";
 export default createStore({
-  state: {
-    name: "SHB",
-    title: "FullStack Developer",
-    age: "+99",
-    products: [],
-  },
-  getters: {
-    nameWithTitle(state) {
-      return `${state.name} is ${state.title}`;
-    },
-    getProduct(state) {
-      return state.products;
-    },
-  },
-  mutations: {
-    changeTitle(state) {
-      state.title = "Web developer";
-    },
-    getProduct(state, products) {
-      state.products=products
-    }
-  },
-  actions: {
-    async getProductApi(context) {
-      await fetch("https://dummyjson.com/products")
-        .then((res) => res.json())
-        .then(data=>context.commit('getProduct',data.products));
-    },
+  state: {},
+  getters: {},
+  mutations: {},
+  actions: {},
+  modules: {
+    ProductModule,
+    UserModule
   },
 });
